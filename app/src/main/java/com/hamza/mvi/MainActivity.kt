@@ -6,12 +6,32 @@ import com.hamza.mvi.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
-    val binding get() = _binding!!
+    private val binding get() = _binding!!
+    var count = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(_binding?.root)
+
+        send()
+        render()
     }
+
+    private fun render() {
+        TODO("Not yet implemented")
+    }
+
+    private fun send() {
+        actions()
+    }
+
+    private fun actions() {
+        binding.btnAddNumber.setOnClickListener {
+
+            binding.txtNumber.text = (count++).toString()
+        }
+    }
+
 
     override fun onDestroy() {
         super.onDestroy()
