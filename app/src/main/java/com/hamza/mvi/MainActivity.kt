@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(_binding?.root)
 
-        send()
+        actions()
         render()
     }
 
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     private fun actions() {
         binding.btnAddNumber.setOnClickListener {
 
-            binding.txtNumber.text = (count++).toString()
+            send()
         }
     }
 
